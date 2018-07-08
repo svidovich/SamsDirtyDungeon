@@ -1,0 +1,15 @@
+Make the first two levels of an interactive dungeon in C++. You should be able 
+to keep the format of the dungeon in a text file.
+
+
+
+Available commands should be:
+GO (direction)
+HELP
+TOUCH
+PICKUP
+DROP
+USE
+LOOK
+INVENTORY
+EQUIP (bonus)
