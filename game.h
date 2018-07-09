@@ -2,6 +2,7 @@
 #include <iostream>
 #include "stdio.h"
 #include "inventory.h"
+#include "room.h"
 using namespace std;
 
 namespace dungeon {
@@ -10,7 +11,9 @@ namespace dungeon {
 		Game(){};
 		void run ()
 		{
-			dungeon::Inventory inventory = Inventory();
+			dungeon::Inventory playerinventory = Inventory();
+			dungeon::Room currentroom = Room();
+			playerinventory.add("torch");
 			string command;
 			while (true) 
 			{
@@ -21,16 +24,27 @@ namespace dungeon {
 					cout << "exiting." << endl;
 					break;
 				}
-				if (command == "add")
+				else if (command == "add")
 				{
 					string item;
 					cout << "Enter item to add:" << endl;
 					cin >> item;
-					inventory.add(item);
+					playerinventory.add(item);
 					cout << endl << "Current inventory:\n";
-					inventory.list();
+					playerinventory.list();
 
-
+				}
+				else if (command == "look")
+				{
+					currentroom.look();
+				}
+				else if (command == "backpack")
+				{
+					playerinventory.list();
+				}
+				else if (command == "help")
+				{
+					cout << "Commands are:\nexit: Leave the game.\nadd: Put an item in your backpack.\nlook: Look around.\nbackpack: Check your backpack.\nhelp: Print this!\n";
 				}
 				else{
 					cout << "Invalid command...";

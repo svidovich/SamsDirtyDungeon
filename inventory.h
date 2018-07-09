@@ -1,3 +1,6 @@
+#ifndef __Inventory__
+#define __Inventory__
+
 #include <string>
 #include <iostream>
 #include "stdio.h"
@@ -11,14 +14,11 @@ namespace dungeon {
                 Inventory(){
                         for (int i=0; i<28; i++){
                                 inv[i] = "";
-                        }
-                        inv[0] = "torch";
-
+                        } 
                 };
                 void add(string item){
                         inv[index++] = item; 
-			cout << "You added " << item << " to your inventory.";
-                }
+		}
                 void list(){
                         for (int i=0; i<28; i++){
                                 if (inv[i] != ""){
@@ -26,6 +26,18 @@ namespace dungeon {
                                 }
                         }
                 }
+		int count(){
+			int numitems = 0;
+			for ( int i = 0; i < 28; i++ ){
+				if ( inv[i] != "" ){
+					numitems += 1;
+				}
+			}
+			return numitems;
+		
+		}
         };
 
 }
+
+#endif
