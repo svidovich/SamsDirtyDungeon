@@ -3,6 +3,7 @@
 #include "stdio.h"
 #include "inventory.h"
 #include "room.h"
+#include "stats.h"
 using namespace std;
 
 namespace dungeon {
@@ -13,6 +14,7 @@ namespace dungeon {
 		{
 			dungeon::Inventory playerinventory = Inventory();
 			dungeon::Room currentroom = Room();
+			dungeon::Statistics playerstats = Statistics(10,10,10,10,0);
 			playerinventory.add("torch");
 			string command;
 			while (true) 
@@ -44,7 +46,11 @@ namespace dungeon {
 				}
 				else if (command == "help")
 				{
-					cout << "Commands are:\nexit: Leave the game.\nadd: Put an item in your backpack.\nlook: Look around.\nbackpack: Check your backpack.\nhelp: Print this!\n";
+					cout << "Commands are:\nexit: Leave the game.\nadd: Put an item in your backpack.\nlook: Look around.\nbackpack: Check your backpack.\nstats: Show currents stats.\nhelp: Print this!\n";
+				}
+				else if (command == "stats")
+				{
+					playerstats.checkstats();
 				}
 				else{
 					cout << "Invalid command...";
