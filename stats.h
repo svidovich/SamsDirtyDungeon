@@ -1,3 +1,6 @@
+#ifndef __Statistics__
+#define __Statistics__
+
 #include <string>
 #include <iostream>
 #include "stdio.h"
@@ -19,6 +22,13 @@ namespace dungeon {
 			maxmana = mm;
 			currentxp = cxp;
 		};
+		Statistics(const Statistics &stats){
+			currenthealth = stats.currenthealth;
+			maxhealth = stats.maxhealth;
+			currentmana = stats.currentmana;
+			maxmana = stats.maxmana;
+			currentxp = stats.currentxp;
+		}
 		void checkstats(){
 			cout << "HP: " << currenthealth << "/" << maxhealth << endl;
 			cout << "MP: " << currentmana << "/" << maxmana << endl;
@@ -26,3 +36,4 @@ namespace dungeon {
 		}
 	};
 }
+#endif
