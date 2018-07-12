@@ -21,6 +21,7 @@ namespace dungeon {
 				if (stats.currenthealth <= 0(
 				{
 				cout << endl << "Oh dear, you are dead!" << endl;
+				return true;
 				exit(1);
 				}
 			}

@@ -21,7 +21,7 @@ Statistics makestats(string monstername)
 	filename = monstername + ".stats";
 	ifstream fin;
 	open_file(fin, filename);
-	int stats[5];
+	int stats[6];
 	line = 0;
 	while (! fin.eof())
 	{

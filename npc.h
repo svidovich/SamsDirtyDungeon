@@ -18,11 +18,12 @@ namespace dungeon {
 			_name = name;
 			_stats = makestats(_name);
 		}
-		void isdead(){
+		bool isdead(){
 			if (_stats.currenthealth <= 0)
 			{
 				cout << endl << _name + "Is dead!" << endl;
 				cout << "You receive " + _stats.cxp + " experience points.";
+				return true;
 			}
 		}
 		void decreasehp(int dmg){
