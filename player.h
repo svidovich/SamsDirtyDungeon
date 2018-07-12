@@ -28,6 +28,21 @@ namespace dungeon {
 				playerinventory.add(item);
 				cout << endl << item + " added to inventory.\n";
 			}
+			void checkinventory() {
+				playerinventory.list();
+			}
+			
+			void decreasehp(int dmg){
+				_stats.currenthp -= dmg;
+			}
+			void increasehp(int heal){
+				_stats.currenthp += heal;
+				if (_stats.currenthp > _stats.maxhp)
+				{
+					_stats.currenthp = _stats.maxhp;
+				}
+			}
+
 	}
 
 }

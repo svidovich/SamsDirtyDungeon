@@ -28,7 +28,7 @@ Statistics makestats(string monstername)
 		fin >> stats[line];
 		line++;
 	}
-	Statistics npcStats = Statistics(stats[0],stats[1],stats[2],stats[3],stats[4]);
+	Statistics npcStats = Statistics(stats[0],stats[1],stats[2],stats[3],stats[4],stats[5]);
 	close_file(fin);
 	return npcStats;
 }

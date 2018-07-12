@@ -15,19 +15,14 @@ namespace dungeon {
 		int maxmana;
 		int currentmana;
 		int currentxp;
-		Statistics(int ch, int mh, int cm, int mm, int cxp){
+		Statistics(int ch, int mh, int cm, int mm, int cxp, int pow){
 			currenthealth = ch;
 			maxhealth = mh;
 			currentmana = cm;
 			maxmana = mm;
 			currentxp = cxp;
+			power = pow;
 		};
-		Statistics(const Statistics &stats){
-			currenthealth = stats.currenthealth;
-			maxhealth = stats.maxhealth;
-			currentmana = stats.currentmana;
-			maxmana = stats.maxmana;
-			currentxp = stats.currentxp;
 		}
 		void checkstats(){
 			cout << "HP: " << currenthealth << "/" << maxhealth << endl;
